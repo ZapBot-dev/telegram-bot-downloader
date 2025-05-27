@@ -1,5 +1,5 @@
-<h1 align="center">ZapBot ⚡</h1>
-<p align="center">
+<h1 align="left">ZapBot ⚡</h1>
+<p align="left">
   <a href="https://t.me/MediawormBot">
     <img src="./public/image.PNG" alt="Try the bot" />
   </a>
