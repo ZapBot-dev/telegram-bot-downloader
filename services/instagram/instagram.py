@@ -31,9 +31,9 @@ from ..instagram import fetcher as fetcher
 from dotenv import load_dotenv
 load_dotenv()
 # limit downloading
-stories_limit = (os.getenv("stories_limit")).upper()
-posts_limit = os.getenv("posts_limit").upper()
-highlights_limit = os.getenv("highlights_limit").upper()
+stories_limit = (os.getenv("STORIES_LIMIT"))
+posts_limit = os.getenv("POSTS_LIMIT")
+highlights_limit = os.getenv("HIGHLIGHTS_LIMIT")
 
 class Instagram():
     def __init__(self):
