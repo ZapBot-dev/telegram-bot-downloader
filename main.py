@@ -195,12 +195,18 @@ def run_bot_thread():
 app = flask.Flask(__name__)
 
 @app.route('/')
-def run_flask():
-    print('Telegram bot is running via Flask on Render! ✅')
-    app.run(host='0.0.0.0', port=5000)
-    
+def home():
+    return 'Telegram bot is running via Flask on Render! ✅'
 
-
+def visit_site():
+    url = "https://example.com"
+    while True:
+        try:
+            response = requests.get(url)
+            print(f"[{time.ctime()}] Visited {url} - Status: {response.status_code}")
+        except Exception as e:
+            print(f"[{time.ctime()}] Error: {e}")
+        time.sleep(120)
 
 # main
 def main():
@@ -213,6 +219,14 @@ def main():
     app.run_polling()
     print("✅ Bot is running...")
 
-if __name__ == "__main__":
-    threading.Thread(target=run_flask())
-    asyncio.run(run_bot_thread())
+#calling server
+threading.Thread(target=visit_site, daemon=True).start()
+# FLASK MOOD
+if not POLLING_MOOD:
+    print("✅ Starting bot with webhook mode...")  
+    if __name__ == '__main__':
+        threading.Thread(target=run_bot_thread).start()
+        app.run(host='0.0.0.0', port=5000)
+else:
+    if __name__ == '__main__':
+        main()
