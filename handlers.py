@@ -395,11 +395,11 @@ async def instagram_handler(url,update: Update,context:ContextTypes.DEFAULT_TYPE
                 keyboard = None
                 reply_markup = None
                 if data["is_private"]:
-                    keyboard[[InlineKeyboardButton("Private Account 🔒",url=f"https://www.instagram.com/{data["username"]}")]]
+                    keyboard[[InlineKeyboardButton("Private Account 🔒",url=f'https://www.instagram.com/{data["username"]}')]]
                     reply_markup = InlineKeyboardMarkup(keyboard)
                 else:
                     keyboard = [
-                        [InlineKeyboardButton("Visit  🔗",url=f"https://www.instagram.com/{data["username"]}")],
+                        [InlineKeyboardButton("Visit  🔗",url=f'https://www.instagram.com/{data["username"]}')],
                         [InlineKeyboardButton("📖 Stories", callback_data="download_stories")],
                         [InlineKeyboardButton("✨ Latest Highlights", callback_data="download_highlights")],
                         [InlineKeyboardButton("🆕 Latest Posts", callback_data="download_posts")],
