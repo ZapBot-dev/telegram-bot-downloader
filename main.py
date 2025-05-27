@@ -195,8 +195,10 @@ def run_bot_thread():
 app = flask.Flask(__name__)
 
 @app.route('/')
-def home():
-    return 'Telegram bot is running via Flask on Render! ✅'
+def run_flask():
+    print('Telegram bot is running via Flask on Render! ✅')
+    app.run(host='0.0.0.0', port=5000)
+    
 
 
 
@@ -211,13 +213,6 @@ def main():
     app.run_polling()
     print("✅ Bot is running...")
 
-
-# FLASK MOOD
-if not POLLING_MOOD:
-    print("✅ Starting bot with webhook mode...")  
-    if __name__ == '__main__':
-        threading.Thread(target=run_bot_thread).start()
-        app.run(host='0.0.0.0', port=5000)
-else:
-    if __name__ == '__main__':
-        main()
+if __name__ == "__main__":
+    threading.Thread(target=run_flask())
+    asyncio.run(run_bot_thread())
