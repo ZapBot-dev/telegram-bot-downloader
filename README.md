@@ -46,6 +46,7 @@ It works beautifully on over 10 platforms like:
 
 ## ⚙️ System Features
 
+- 🌐 **Webhook or Polling Support**  : choose your preferred update method
 - 💰 **Donation System**: Can be `activated` or `deactivated`.
 - 🔐 **Request Limiter**: For security and abuse prevention.
 - 🚫 **User Request Limiter**: Protects from spam attacks.
@@ -56,11 +57,29 @@ It works beautifully on over 10 platforms like:
 </p>
 ---
 
-## 🚀 How to Use
+## ⚙️ Setup
 
-1. Start the bot 👉 [@zap_bot_dev](https://t.me/zap_bot_dev)  
-2. Send a valid media link (Instagram, YouTube...)  
-3. Enjoy your download 😍
+1. 🎯 **Get your Bot Token**  
+   Create a bot via [@BotFather](https://t.me/BotFather) and copy the token.
+
+2. 🕵️‍♂️ **Get Instagram Headers**
+   - Use your browser or mobile to get:
+     - `User-Agent`
+     - `App-ID`
+     - `Session-ID`
+   - These are required to make valid requests to Instagram.
+
+3. 📄 **Configure Environment Variables**
+   - Copy `.env_example` to `.env`
+   - Fill in the required values:
+     ```bash
+     cp .env_example .env
+     ```
+
+4. 🚀 **Run the bot**
+   ```bash
+   python main.py
+
 
 ---
 
