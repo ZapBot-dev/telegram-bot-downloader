@@ -78,7 +78,7 @@ class Instagram():
             with open(full_path,"wb") as f:
                 res = requests.get(data["Direct_url"],timeout=1000)
                 f.write(res.content)
-            return {"status":"ok","message":f"{data["type"]} downloaded ."}
+            return {"status":"ok","message":f'{data["type"]} downloaded .'}
 
 
         except Exception as e:
