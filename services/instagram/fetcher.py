@@ -47,8 +47,8 @@ class User:
         self.business_email = userData.get("business_email")
         self.business_phone_number = userData.get("business_phone_number")
         self.bio = f"{userData.get('biography')}"
-        self.followers = f"{userData["edge_followed_by"]["count"]}"
-        self.following = f"{userData["edge_follow"]["count"]}"
+        self.followers = f'{userData["edge_followed_by"]["count"]}'
+        self.following = f'{userData["edge_follow"]["count"]}'
         self.is_business_account = userData.get("is_business_account")
         self.facebookID = userData.get("fbid")
 
