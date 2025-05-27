@@ -1,7 +1,7 @@
-<h1 align="left">ZapBot ⚡</h1>
+<h1 align="left">🎧 Telegram Bot Downloader | Save from YouTube, TikTok, Instagram, etc.</h1>
 <p align="center">
   <a href="https://t.me/MediawormBot">
-    <img src="./public/image.PNG" alt="Try the bot" width="100%"  />
+    <img src="./public/image.PNG" alt="Try the bot" width="100%" />
   </a>
 </p>
 
