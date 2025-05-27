@@ -99,7 +99,7 @@ class Instagram():
             with open(full_path,"wb") as f:
                 res = requests.get(data[0]["direct_url"],timeout=1000)
                 f.write(res.content)
-            return {"status":"ok","message":f"{data[0]["type"]} downloaded ."}
+            return {"status":"ok","message":f'{data[0]["type"]} downloaded .'}
         except Exception as e:
             return {"status":"error","message":"highlight invalid","exception":e}
     # post
@@ -118,7 +118,7 @@ class Instagram():
                 with open(full_path,"wb") as f:
                     res = requests.get(data[0]["direct_url"],timeout=1000)
                     f.write(res.content)
-                return {"status":"ok","message":f"{data[0]["type"]} downloaded ."}
+                return {"status":"ok","message":f'{data[0]["type"]} downloaded .'}
             else:
                 for i in range(1,(len(data[0])-1)):
                     key = f"Image {i}"
