@@ -22,7 +22,31 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # -----------------------------------------------------------------------------
-import time
+# -----------------------------------------------------------------------------
+# MIT License
+# 
+# Copyright (c) 2025 Amine Bouzaid
+# Creator GitHub: https://github.com/ZapBot-dev 
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+# -----------------------------------------------------------------------------
+
 import asyncio
 import logging
 import os
@@ -44,7 +68,6 @@ load_dotenv()
 
 # Bot configuration
 TOKEN = os.getenv("BOT_TOKEN")
-POLLING_MOOD = os.getenv("POLLING_MOOD", "TRUE") == "TRUE"
 CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME")
 DONATION_SYSTEM = os.getenv("DONATION_SYSTEM")
 IS_MAINTENANCE = os.getenv("IS_MAINTENANCE")
@@ -185,28 +208,7 @@ Thank you for your patience ❤️
     logger.warning(f"User {user_id} sent an unsupported or invalid URL.")
 
 
-#run bot as flask
-def run_bot_thread():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(main())
 
-# Flask setup
-app = flask.Flask(__name__)
-
-@app.route('/')
-def home():
-    return 'Telegram bot is running via Flask on Render! ✅'
-
-def visit_site():
-    url = "https://example.com"
-    while True:
-        try:
-            response = requests.get(url)
-            print(f"[{time.ctime()}] Visited {url} - Status: {response.status_code}")
-        except Exception as e:
-            print(f"[{time.ctime()}] Error: {e}")
-        time.sleep(120)
 
 # main
 def main():
@@ -219,14 +221,7 @@ def main():
     app.run_polling()
     print("✅ Bot is running...")
 
-#calling server
-asyncio.create_task(visit_site())
-# FLASK MOOD
-if not POLLING_MOOD:
-    print("✅ Starting bot with webhook mode...")  
-    if __name__ == '__main__':
-        threading.Thread(target=run_bot_thread).start()
-        app.run(host='0.0.0.0', port=5000)
-else:
-    if __name__ == '__main__':
-        main()
+
+
+if __name__ == '__main__':
+    main()
