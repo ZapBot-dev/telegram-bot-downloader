@@ -220,7 +220,7 @@ def main():
     print("✅ Bot is running...")
 
 #calling server
-threading.Thread(target=visit_site, daemon=True).start()
+asyncio.create_task(visit_site())
 # FLASK MOOD
 if not POLLING_MOOD:
     print("✅ Starting bot with webhook mode...")  
