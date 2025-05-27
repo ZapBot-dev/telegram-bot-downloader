@@ -97,3 +97,14 @@ Install all dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+
+## ☕ Support Me
+
+If you find this project helpful, consider supporting me to keep it alive and updated! 🙏💖
+
+- [Ko-fi – Buy me a coffee](https://ko-fi.com/aminebouzaid) ☕
+- Binance UID: `1106402133` 🪙
+- USDT (TRC20): `0xaFaCAdEF2ad8BFD96469C1cBBBb3Fe4d1221b3C0` 💵
+
