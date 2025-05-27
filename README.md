@@ -15,7 +15,7 @@
 ## 🎬 Demo
 
 <p align="center">
-  <img src="https://your-gif-url.com/demo.gif" alt="Bot Demo" width="70%">
+  <img src="./public/video.gif" alt="Bot Demo" width="30%">
 </p>
 
 ---
