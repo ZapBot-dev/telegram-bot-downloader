@@ -63,6 +63,9 @@ from services.utils import validator
 from handlers import send_general , send_general_video_buttons_handler , instagram_handler , snapchat_handler
 from channel import is_user_member
 from limit import is_allowed_to_use
+from keep_alive import keep_alive
+#keep bot alive
+keep_alive()
 # Load environment variables from .env file
 load_dotenv()
 
