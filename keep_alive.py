@@ -22,7 +22,7 @@ def keep_alive():
         while True:
             try:
                 print("[Pinger] Sending request to self...")
-                requests.get("http://localhost:8080/")
+                requests.get("https://telegram-bot-downloader-f0x2.onrender.com:8080/")
             except Exception as e:
                 print(f"[Pinger] Failed to ping self: {e}")
             time.sleep(600)  # كل 10 دقائق
